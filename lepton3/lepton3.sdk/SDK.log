@@ -1,0 +1,702 @@
+15:41:07 INFO  : Registering command handlers for SDK TCF services
+15:41:08 INFO  : Launching XSCT server: xsct.bat -interactive C:\hdl_projects\lepton3\lepton3.sdk\temp_xsdb_launch_script.tcl
+15:41:10 INFO  : XSCT server has started successfully.
+15:41:10 INFO  : Processing command line option -hwspec C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper.hdf.
+15:41:10 INFO  : Successfully done setting XSCT server connection channel  
+15:41:10 INFO  : Successfully done setting SDK workspace  
+15:43:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:43:35 INFO  : Jtag cable 'Digilent Arty Z7 003017A4CA9CA' is selected.
+15:43:35 INFO  : 'jtag frequency' command is executed.
+15:43:35 INFO  : Sourcing of 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:43:35 INFO  : Context for 'APU' is selected.
+15:43:35 INFO  : System reset is completed.
+15:43:38 INFO  : 'after 3000' command is executed.
+15:43:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1' command is executed.
+15:43:41 INFO  : FPGA configured successfully with bitstream "C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+15:43:41 INFO  : Context for 'APU' is selected.
+15:43:41 INFO  : Hardware design information is loaded from 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+15:43:41 INFO  : 'configparams force-mem-access 1' command is executed.
+15:43:41 INFO  : Context for 'APU' is selected.
+15:43:41 INFO  : 'ps7_init' command is executed.
+15:43:41 INFO  : 'ps7_post_config' command is executed.
+15:43:41 INFO  : 'configparams force-mem-access 0' command is executed.
+15:43:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1
+fpga -file C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+loadhw -hw C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:43:41 INFO  : Memory regions updated for context APU
+15:43:41 INFO  : Launch script is exported to file 'C:\hdl_projects\lepton3\lepton3.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local.tcl'
+15:47:05 INFO  : Disconnected from the channel tcfchan#1.
+15:47:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:47:06 INFO  : Jtag cable 'Digilent Arty Z7 003017A4CA9CA' is selected.
+15:47:06 INFO  : 'jtag frequency' command is executed.
+15:47:06 INFO  : Sourcing of 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:47:06 INFO  : Context for 'APU' is selected.
+15:47:06 INFO  : System reset is completed.
+15:47:09 INFO  : 'after 3000' command is executed.
+15:47:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1' command is executed.
+15:47:12 INFO  : FPGA configured successfully with bitstream "C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+15:47:12 INFO  : Context for 'APU' is selected.
+15:47:15 INFO  : Hardware design information is loaded from 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+15:47:15 INFO  : 'configparams force-mem-access 1' command is executed.
+15:47:15 INFO  : Context for 'APU' is selected.
+15:47:15 INFO  : 'ps7_init' command is executed.
+15:47:15 INFO  : 'ps7_post_config' command is executed.
+15:47:15 INFO  : 'configparams force-mem-access 0' command is executed.
+15:47:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1
+fpga -file C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+loadhw -hw C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:47:15 INFO  : Memory regions updated for context APU
+15:47:15 INFO  : Launch script is exported to file 'C:\hdl_projects\lepton3\lepton3.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local.tcl'
+15:47:56 INFO  : Disconnected from the channel tcfchan#2.
+15:47:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:47:58 INFO  : Jtag cable 'Digilent Arty Z7 003017A4CA9CA' is selected.
+15:47:58 INFO  : 'jtag frequency' command is executed.
+15:47:58 INFO  : Sourcing of 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:47:58 INFO  : Context for 'APU' is selected.
+15:47:58 INFO  : System reset is completed.
+15:48:01 INFO  : 'after 3000' command is executed.
+15:48:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1' command is executed.
+15:48:03 INFO  : FPGA configured successfully with bitstream "C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+15:48:03 INFO  : Context for 'APU' is selected.
+15:48:06 INFO  : Hardware design information is loaded from 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+15:48:06 INFO  : 'configparams force-mem-access 1' command is executed.
+15:48:06 INFO  : Context for 'APU' is selected.
+15:48:06 INFO  : 'ps7_init' command is executed.
+15:48:06 INFO  : 'ps7_post_config' command is executed.
+15:48:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:48:06 INFO  : The application 'C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:48:06 INFO  : 'configparams force-mem-access 0' command is executed.
+15:48:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1
+fpga -file C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+loadhw -hw C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+dow C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:48:06 INFO  : Memory regions updated for context APU
+15:48:06 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:48:06 INFO  : 'con' command is executed.
+15:48:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+con
+----------------End of Script----------------
+
+15:48:06 INFO  : Launch script is exported to file 'C:\hdl_projects\lepton3\lepton3.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local.tcl'
+15:53:11 INFO  : Disconnected from the channel tcfchan#3.
+15:53:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:53:12 INFO  : Jtag cable 'Digilent Arty Z7 003017A4CA9CA' is selected.
+15:53:12 INFO  : 'jtag frequency' command is executed.
+15:53:12 INFO  : Sourcing of 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:53:13 INFO  : Context for 'APU' is selected.
+15:53:13 INFO  : System reset is completed.
+15:53:16 INFO  : 'after 3000' command is executed.
+15:53:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1' command is executed.
+15:53:18 INFO  : FPGA configured successfully with bitstream "C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+15:53:18 INFO  : Context for 'APU' is selected.
+15:53:21 INFO  : Hardware design information is loaded from 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+15:53:21 INFO  : 'configparams force-mem-access 1' command is executed.
+15:53:21 INFO  : Context for 'APU' is selected.
+15:53:21 INFO  : 'ps7_init' command is executed.
+15:53:21 INFO  : 'ps7_post_config' command is executed.
+15:53:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:53:22 INFO  : The application 'C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:53:22 INFO  : 'configparams force-mem-access 0' command is executed.
+15:53:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1
+fpga -file C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+loadhw -hw C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+dow C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:53:22 INFO  : Memory regions updated for context APU
+15:53:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:53:22 INFO  : 'con' command is executed.
+15:53:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+con
+----------------End of Script----------------
+
+15:53:22 INFO  : Launch script is exported to file 'C:\hdl_projects\lepton3\lepton3.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local.tcl'
+15:56:36 INFO  : Disconnected from the channel tcfchan#4.
+15:56:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:56:38 INFO  : Jtag cable 'Digilent Arty Z7 003017A4CA9CA' is selected.
+15:56:38 INFO  : 'jtag frequency' command is executed.
+15:56:38 INFO  : Sourcing of 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:56:38 INFO  : Context for 'APU' is selected.
+15:56:38 INFO  : System reset is completed.
+15:56:41 INFO  : 'after 3000' command is executed.
+15:56:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1' command is executed.
+15:56:43 INFO  : FPGA configured successfully with bitstream "C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+15:56:43 INFO  : Context for 'APU' is selected.
+15:56:46 INFO  : Hardware design information is loaded from 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+15:56:46 INFO  : 'configparams force-mem-access 1' command is executed.
+15:56:46 INFO  : Context for 'APU' is selected.
+15:56:46 INFO  : 'ps7_init' command is executed.
+15:56:46 INFO  : 'ps7_post_config' command is executed.
+15:56:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:56:46 INFO  : The application 'C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:56:46 INFO  : 'configparams force-mem-access 0' command is executed.
+15:56:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1
+fpga -file C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+loadhw -hw C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+dow C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:56:46 INFO  : Memory regions updated for context APU
+15:56:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:56:47 INFO  : 'con' command is executed.
+15:56:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+con
+----------------End of Script----------------
+
+15:56:47 INFO  : Launch script is exported to file 'C:\hdl_projects\lepton3\lepton3.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local.tcl'
+15:59:13 INFO  : Disconnected from the channel tcfchan#5.
+15:59:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:59:14 INFO  : Jtag cable 'Digilent Arty Z7 003017A4CA9CA' is selected.
+15:59:14 INFO  : 'jtag frequency' command is executed.
+15:59:14 INFO  : Sourcing of 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+15:59:14 INFO  : Context for 'APU' is selected.
+15:59:15 INFO  : System reset is completed.
+15:59:18 INFO  : 'after 3000' command is executed.
+15:59:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1' command is executed.
+15:59:20 INFO  : FPGA configured successfully with bitstream "C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+15:59:20 INFO  : Context for 'APU' is selected.
+15:59:24 INFO  : Hardware design information is loaded from 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+15:59:24 INFO  : 'configparams force-mem-access 1' command is executed.
+15:59:24 INFO  : Context for 'APU' is selected.
+15:59:25 INFO  : 'ps7_init' command is executed.
+15:59:25 INFO  : 'ps7_post_config' command is executed.
+15:59:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:59:25 INFO  : The application 'C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:59:25 INFO  : 'configparams force-mem-access 0' command is executed.
+15:59:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1
+fpga -file C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+loadhw -hw C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+dow C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:59:25 INFO  : Memory regions updated for context APU
+15:59:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:59:25 INFO  : 'con' command is executed.
+15:59:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+con
+----------------End of Script----------------
+
+15:59:25 INFO  : Launch script is exported to file 'C:\hdl_projects\lepton3\lepton3.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local.tcl'
+16:01:38 INFO  : Disconnected from the channel tcfchan#6.
+16:01:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:01:39 INFO  : Jtag cable 'Digilent Arty Z7 003017A4CA9CA' is selected.
+16:01:39 INFO  : 'jtag frequency' command is executed.
+16:01:39 INFO  : Sourcing of 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:01:39 INFO  : Context for 'APU' is selected.
+16:01:40 INFO  : System reset is completed.
+16:01:43 INFO  : 'after 3000' command is executed.
+16:01:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1' command is executed.
+16:01:45 INFO  : FPGA configured successfully with bitstream "C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+16:01:45 INFO  : Context for 'APU' is selected.
+16:01:48 INFO  : Hardware design information is loaded from 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+16:01:48 INFO  : 'configparams force-mem-access 1' command is executed.
+16:01:48 INFO  : Context for 'APU' is selected.
+16:01:49 INFO  : 'ps7_init' command is executed.
+16:01:49 INFO  : 'ps7_post_config' command is executed.
+16:01:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:01:49 INFO  : The application 'C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:01:49 INFO  : 'configparams force-mem-access 0' command is executed.
+16:01:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1
+fpga -file C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+loadhw -hw C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+dow C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:01:49 INFO  : Memory regions updated for context APU
+16:01:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:01:49 INFO  : 'con' command is executed.
+16:01:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+con
+----------------End of Script----------------
+
+16:01:49 INFO  : Launch script is exported to file 'C:\hdl_projects\lepton3\lepton3.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local.tcl'
+16:17:32 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1591888635473,  Project:1591886319333
+16:17:32 INFO  : Project design_1_wrapper_hw_platform_0's source hardware specification located at C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+16:17:34 INFO  : Copied contents of C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper.hdf into \design_1_wrapper_hw_platform_0\system.hdf.
+16:17:38 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+16:17:42 INFO  : 
+16:17:43 INFO  : Updating hardware inferred compiler options for app.
+16:17:43 INFO  : Clearing existing target manager status.
+16:17:43 INFO  : Closing and re-opening the MSS file of ther project app_bsp
+16:17:43 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+16:17:45 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+16:19:10 INFO  : Disconnected from the channel tcfchan#7.
+16:19:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:19:11 INFO  : Jtag cable 'Digilent Arty Z7 003017A4CA9CA' is selected.
+16:19:11 INFO  : 'jtag frequency' command is executed.
+16:19:11 INFO  : Sourcing of 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:19:11 INFO  : Context for 'APU' is selected.
+16:19:11 INFO  : System reset is completed.
+16:19:14 INFO  : 'after 3000' command is executed.
+16:19:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1' command is executed.
+16:19:17 INFO  : FPGA configured successfully with bitstream "C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+16:19:17 INFO  : Context for 'APU' is selected.
+16:19:17 INFO  : Hardware design information is loaded from 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+16:19:17 INFO  : 'configparams force-mem-access 1' command is executed.
+16:19:17 INFO  : Context for 'APU' is selected.
+16:19:17 INFO  : 'ps7_init' command is executed.
+16:19:17 INFO  : 'ps7_post_config' command is executed.
+16:19:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:19:18 INFO  : The application 'C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:19:18 INFO  : 'configparams force-mem-access 0' command is executed.
+16:19:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1
+fpga -file C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+loadhw -hw C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+dow C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:19:18 INFO  : Memory regions updated for context APU
+16:19:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:19:18 INFO  : 'con' command is executed.
+16:19:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+con
+----------------End of Script----------------
+
+16:19:18 INFO  : Launch script is exported to file 'C:\hdl_projects\lepton3\lepton3.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local.tcl'
+16:47:16 INFO  : Disconnected from the channel tcfchan#8.
+16:47:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:47:17 INFO  : Jtag cable 'Digilent Arty Z7 003017A4CA9CA' is selected.
+16:47:17 INFO  : 'jtag frequency' command is executed.
+16:47:17 INFO  : Sourcing of 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:47:18 INFO  : Context for 'APU' is selected.
+16:47:19 INFO  : System reset is completed.
+16:47:22 INFO  : 'after 3000' command is executed.
+16:47:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1' command is executed.
+16:47:24 INFO  : FPGA configured successfully with bitstream "C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+16:47:24 INFO  : Context for 'APU' is selected.
+16:47:28 INFO  : Hardware design information is loaded from 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+16:47:28 INFO  : 'configparams force-mem-access 1' command is executed.
+16:47:28 INFO  : Context for 'APU' is selected.
+16:47:28 INFO  : 'ps7_init' command is executed.
+16:47:28 INFO  : 'ps7_post_config' command is executed.
+16:47:28 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:47:29 INFO  : The application 'C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:47:29 INFO  : 'configparams force-mem-access 0' command is executed.
+16:47:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1
+fpga -file C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+loadhw -hw C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+dow C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:47:29 INFO  : Memory regions updated for context APU
+16:47:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:47:29 INFO  : 'con' command is executed.
+16:47:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+con
+----------------End of Script----------------
+
+16:47:29 INFO  : Launch script is exported to file 'C:\hdl_projects\lepton3\lepton3.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local.tcl'
+16:52:41 INFO  : Disconnected from the channel tcfchan#9.
+16:52:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:52:43 INFO  : Jtag cable 'Digilent Arty Z7 003017A4CA9CA' is selected.
+16:52:43 INFO  : 'jtag frequency' command is executed.
+16:52:43 INFO  : Sourcing of 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+16:52:44 INFO  : Context for 'APU' is selected.
+16:52:44 INFO  : System reset is completed.
+16:52:47 INFO  : 'after 3000' command is executed.
+16:52:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1' command is executed.
+16:52:50 INFO  : FPGA configured successfully with bitstream "C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+16:52:50 INFO  : Context for 'APU' is selected.
+16:52:50 INFO  : Hardware design information is loaded from 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+16:52:50 INFO  : 'configparams force-mem-access 1' command is executed.
+16:52:50 INFO  : Context for 'APU' is selected.
+16:52:50 INFO  : 'ps7_init' command is executed.
+16:52:50 INFO  : 'ps7_post_config' command is executed.
+16:52:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:52:51 INFO  : The application 'C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:52:51 INFO  : 'configparams force-mem-access 0' command is executed.
+16:52:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1
+fpga -file C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+loadhw -hw C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+dow C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:52:51 INFO  : Memory regions updated for context APU
+16:52:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:52:51 INFO  : 'con' command is executed.
+16:52:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+con
+----------------End of Script----------------
+
+16:52:51 INFO  : Launch script is exported to file 'C:\hdl_projects\lepton3\lepton3.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local.tcl'
+17:48:46 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1591894088507,  Project:1591888635473
+17:48:46 INFO  : Project design_1_wrapper_hw_platform_0's source hardware specification located at C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+17:48:48 INFO  : Copied contents of C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper.hdf into \design_1_wrapper_hw_platform_0\system.hdf.
+17:48:51 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+17:48:56 INFO  : 
+17:48:56 INFO  : Updating hardware inferred compiler options for app.
+17:48:56 INFO  : Clearing existing target manager status.
+17:48:56 INFO  : Closing and re-opening the MSS file of ther project app_bsp
+17:48:57 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+17:48:58 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+17:49:33 INFO  : Disconnected from the channel tcfchan#10.
+17:49:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:49:35 INFO  : Jtag cable 'Digilent Arty Z7 003017A4CA9CA' is selected.
+17:49:35 INFO  : 'jtag frequency' command is executed.
+17:49:35 INFO  : Sourcing of 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+17:49:35 INFO  : Context for 'APU' is selected.
+17:49:35 INFO  : System reset is completed.
+17:49:38 INFO  : 'after 3000' command is executed.
+17:49:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1' command is executed.
+17:49:40 INFO  : FPGA configured successfully with bitstream "C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+17:49:41 INFO  : Context for 'APU' is selected.
+17:49:41 INFO  : Hardware design information is loaded from 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+17:49:41 INFO  : 'configparams force-mem-access 1' command is executed.
+17:49:41 INFO  : Context for 'APU' is selected.
+17:49:41 INFO  : 'ps7_init' command is executed.
+17:49:41 INFO  : 'ps7_post_config' command is executed.
+17:49:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:49:41 INFO  : The application 'C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+17:49:41 INFO  : 'configparams force-mem-access 0' command is executed.
+17:49:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1
+fpga -file C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+loadhw -hw C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+dow C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+17:49:41 INFO  : Memory regions updated for context APU
+17:49:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+17:49:41 INFO  : 'con' command is executed.
+17:49:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+con
+----------------End of Script----------------
+
+17:49:41 INFO  : Launch script is exported to file 'C:\hdl_projects\lepton3\lepton3.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local.tcl'
+18:30:36 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1591896606212,  Project:1591894088507
+18:30:36 INFO  : Project design_1_wrapper_hw_platform_0's source hardware specification located at C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+18:32:05 INFO  : Copied contents of C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper.hdf into \design_1_wrapper_hw_platform_0\system.hdf.
+18:32:08 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+18:32:12 INFO  : 
+18:32:13 INFO  : Updating hardware inferred compiler options for app.
+18:32:13 INFO  : Clearing existing target manager status.
+18:32:13 INFO  : Closing and re-opening the MSS file of ther project app_bsp
+18:32:14 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+18:32:15 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+18:33:32 INFO  : Disconnected from the channel tcfchan#11.
+18:33:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:33:33 INFO  : Jtag cable 'Digilent Arty Z7 003017A4CA9CA' is selected.
+18:33:33 INFO  : 'jtag frequency' command is executed.
+18:33:33 INFO  : Sourcing of 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+18:33:33 INFO  : Context for 'APU' is selected.
+18:33:33 INFO  : System reset is completed.
+18:33:36 INFO  : 'after 3000' command is executed.
+18:33:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1' command is executed.
+18:33:39 INFO  : FPGA configured successfully with bitstream "C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+18:33:39 INFO  : Context for 'APU' is selected.
+18:33:39 INFO  : Hardware design information is loaded from 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+18:33:39 INFO  : 'configparams force-mem-access 1' command is executed.
+18:33:39 INFO  : Context for 'APU' is selected.
+18:33:39 INFO  : 'ps7_init' command is executed.
+18:33:39 INFO  : 'ps7_post_config' command is executed.
+18:33:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:33:40 INFO  : The application 'C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:33:40 INFO  : 'configparams force-mem-access 0' command is executed.
+18:33:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1
+fpga -file C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+loadhw -hw C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+dow C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:33:40 INFO  : Memory regions updated for context APU
+18:33:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:33:40 INFO  : 'con' command is executed.
+18:33:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+con
+----------------End of Script----------------
+
+18:33:40 INFO  : Launch script is exported to file 'C:\hdl_projects\lepton3\lepton3.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local.tcl'
+19:47:51 INFO  : Disconnected from the channel tcfchan#12.
+20:30:03 INFO  : Registering command handlers for SDK TCF services
+20:30:03 INFO  : Launching XSCT server: xsct.bat -interactive C:\hdl_projects\lepton3\lepton3.sdk\temp_xsdb_launch_script.tcl
+20:30:05 INFO  : XSCT server has started successfully.
+20:30:05 INFO  : Processing command line option -hwspec C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper.hdf.
+20:30:05 INFO  : Successfully done setting XSCT server connection channel  
+20:30:06 INFO  : Successfully done setting SDK workspace  
+20:30:06 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+20:30:09 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1591902926309,  Project:1591896606212
+20:30:09 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper.hdf.
+20:30:09 INFO  : Copied contents of C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper.hdf into \design_1_wrapper_hw_platform_0\system.hdf.
+20:30:13 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+20:30:17 INFO  : 
+20:30:18 INFO  : Updating hardware inferred compiler options for app.
+20:30:18 INFO  : Clearing existing target manager status.
+20:33:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:33:24 INFO  : Jtag cable 'Digilent Arty Z7 003017A4CA9CA' is selected.
+20:33:24 INFO  : 'jtag frequency' command is executed.
+20:33:24 INFO  : Sourcing of 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+20:33:25 INFO  : Context for 'APU' is selected.
+20:33:25 INFO  : System reset is completed.
+20:33:28 INFO  : 'after 3000' command is executed.
+20:33:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1' command is executed.
+20:33:32 INFO  : FPGA configured successfully with bitstream "C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+20:33:33 INFO  : Context for 'APU' is selected.
+20:33:33 INFO  : Hardware design information is loaded from 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+20:33:33 INFO  : 'configparams force-mem-access 1' command is executed.
+20:33:33 INFO  : Context for 'APU' is selected.
+20:33:34 INFO  : 'ps7_init' command is executed.
+20:33:34 INFO  : 'ps7_post_config' command is executed.
+20:33:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:33:34 INFO  : The application 'C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+20:33:34 INFO  : 'configparams force-mem-access 0' command is executed.
+20:33:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1
+fpga -file C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+loadhw -hw C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+dow C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+20:33:34 INFO  : Memory regions updated for context APU
+20:33:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+20:33:34 INFO  : 'con' command is executed.
+20:33:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+con
+----------------End of Script----------------
+
+20:33:34 INFO  : Launch script is exported to file 'C:\hdl_projects\lepton3\lepton3.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local.tcl'
+04:22:51 INFO  : Disconnected from the channel tcfchan#1.
+09:59:50 INFO  : Registering command handlers for SDK TCF services
+09:59:51 INFO  : Launching XSCT server: xsct.bat -interactive C:\hdl_projects\lepton3\lepton3.sdk\temp_xsdb_launch_script.tcl
+09:59:53 INFO  : XSCT server has started successfully.
+09:59:56 INFO  : Processing command line option -hwspec C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper.hdf.
+09:59:56 INFO  : Successfully done setting XSCT server connection channel  
+09:59:56 INFO  : Successfully done setting SDK workspace  
+09:59:56 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+10:00:01 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1591952168056,  Project:1591902926309
+10:00:01 INFO  : The hardware specification for project 'design_1_wrapper_hw_platform_0' is different from C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper.hdf.
+10:00:01 INFO  : Copied contents of C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper.hdf into \design_1_wrapper_hw_platform_0\system.hdf.
+10:00:39 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+10:00:44 INFO  : 
+10:00:45 INFO  : Updating hardware inferred compiler options for app.
+10:00:45 INFO  : Clearing existing target manager status.
+10:01:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:01:26 INFO  : Jtag cable 'Digilent Arty Z7 003017A4CA9CA' is selected.
+10:01:26 INFO  : 'jtag frequency' command is executed.
+10:01:26 INFO  : Sourcing of 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+10:01:27 INFO  : Context for 'APU' is selected.
+10:01:27 INFO  : System reset is completed.
+10:01:30 INFO  : 'after 3000' command is executed.
+10:01:31 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1' command is executed.
+10:01:33 INFO  : FPGA configured successfully with bitstream "C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+10:01:35 INFO  : Context for 'APU' is selected.
+10:01:35 INFO  : Hardware design information is loaded from 'C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+10:01:35 INFO  : 'configparams force-mem-access 1' command is executed.
+10:01:35 INFO  : Context for 'APU' is selected.
+10:01:35 INFO  : 'ps7_init' command is executed.
+10:01:35 INFO  : 'ps7_post_config' command is executed.
+10:01:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:01:35 INFO  : The application 'C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf' is downloaded to processor 'ps7_cortexa9_0'.
+10:01:35 INFO  : 'configparams force-mem-access 0' command is executed.
+10:01:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA" && level==0} -index 1
+fpga -file C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+loadhw -hw C:/hdl_projects/lepton3/lepton3.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+dow C:/hdl_projects/lepton3/lepton3.sdk/app/Debug/app.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+10:01:35 INFO  : Memory regions updated for context APU
+10:01:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+10:01:36 INFO  : 'con' command is executed.
+10:01:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4CA9CA"} -index 0
+con
+----------------End of Script----------------
+
+10:01:36 INFO  : Launch script is exported to file 'C:\hdl_projects\lepton3\lepton3.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local.tcl'

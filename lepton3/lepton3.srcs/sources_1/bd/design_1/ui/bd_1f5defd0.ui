@@ -1,0 +1,53 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 6 -x 1660 -y 640 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 1660 -y 670 -defaultsOSRD
+preplace port IIC_0_0 -pg 1 -lvl 6 -x 1660 -y 700 -defaultsOSRD
+preplace port miso -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace port sck -pg 1 -lvl 6 -x 1660 -y 50 -defaultsOSRD
+preplace portBus ss -pg 1 -lvl 6 -x 1660 -y 80 -defaultsOSRD
+preplace portBus ck_ioa -pg 1 -lvl 6 -x 1660 -y 540 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 220 -y 720 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 600 -y 490 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -x 220 -y 490 -defaultsOSRD
+preplace inst blk_mem_gen_0 -pg 1 -lvl 4 -x 1230 -y 480 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 3 -x 900 -y 520 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 900 -y 380 -defaultsOSRD
+preplace inst ila_0 -pg 1 -lvl 5 -x 1550 -y 370 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 5 -x 1550 -y 570 -defaultsOSRD
+preplace inst lepton_if_0 -pg 1 -lvl 4 -x 1230 -y 140 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 30 590 450 640 750 300 1040
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 20 390 410
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 2 460 630 760
+preplace netloc lepton_if_0_addrb 1 3 2 1090 340 1380
+preplace netloc lepton_if_0_dinb 1 3 2 1060 330 1370
+preplace netloc lepton_if_0_enb 1 3 2 1070 350 1360
+preplace netloc lepton_if_0_rstb 1 4 1 1430 140n
+preplace netloc processing_system7_0_FCLK_CLK1 1 1 4 440J 290 NJ 290 NJ 290 1390
+preplace netloc xlconstant_0_dout 1 5 1 1640J 540n
+preplace netloc miso_1 1 0 5 NJ 160 NJ 160 NJ 160 1090J 300 1350
+preplace netloc axi_gpio_0_gpio_io_o 1 3 1 1030 140n
+preplace netloc lepton_if_0_sclk 1 4 2 1420J 50 NJ
+preplace netloc lepton_if_0_ss 1 4 2 1410J 80 NJ
+preplace netloc lepton_if_0_line_out 1 4 1 1450 100n
+preplace netloc lepton_if_0_line_val 1 4 1 1440 120n
+preplace netloc lepton_if_0_web 1 3 2 1080 360 1400
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 740 360n
+preplace netloc processing_system7_0_FIXED_IO 1 1 5 NJ 670 NJ 670 NJ 670 NJ 670 NJ
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 3 1 1050 420n
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 N 500
+preplace netloc processing_system7_0_IIC_0 1 1 5 430J 700 NJ 700 NJ 700 NJ 700 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 420 410n
+preplace netloc processing_system7_0_DDR 1 1 5 NJ 650 NJ 650 NJ 650 1400J 640 NJ
+levelinfo -pg 1 0 220 600 900 1230 1550 1660
+pagesize -pg 1 -db -bbox -sgen -80 0 1780 850
+"
+}
+{
+   "da_axi4_cnt":"4",
+   "da_board_cnt":"1",
+   "da_bram_cntlr_cnt":"2",
+   "da_ps7_cnt":"1"
+}
